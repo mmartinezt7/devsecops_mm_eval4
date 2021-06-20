@@ -31,7 +31,7 @@ pipeline {
                 echo '========================================='
                 echo '                TEST '
                 echo '========================================='
-                 sh 'mvn clean test -e'
+                sh 'mvn clean test -e'
             }
         }
 
@@ -40,10 +40,8 @@ pipeline {
                 echo '========================================='
                 echo '                DEPENDENCY-CHECK '
                 echo '========================================='
-                 withMaven(maven : 'Maven') {  
-                    sh 'mvn dependency-check:check'  
-                 }  
-                 dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'  
+                sh 'mvn dependency-check:check' 
+                dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'  
             }  
         }  
         
