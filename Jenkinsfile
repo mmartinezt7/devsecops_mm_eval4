@@ -40,7 +40,7 @@ pipeline {
                 echo '========================================='
                 echo '                DEPENDENCY-CHECK '
                 echo '========================================='
-                 withMaven(maven : 'mvn-3.6.3') {  
+                 withMaven(maven : 'Maven') {  
                     sh 'mvn dependency-check:check'  
                  }  
                  dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'  
