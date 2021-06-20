@@ -42,7 +42,7 @@ pipeline {
               echo '========================================='
                 script {
                     def scannerHome = tool 'sonar-scanner';
-                    withSonarQubeEnv('Sonar Server') {
+                    withSonarQubeEnv('SonarQube') {
                       sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=Ms-Maven -Dsonar.sources=target/ -Dsonar.host.url=http://localhost:9000 -Dsonar.login=14c09fa032024d6f0e5923c7cead79f0bcaa23f3"
                     }
                 }
